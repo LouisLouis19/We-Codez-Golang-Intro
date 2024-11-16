@@ -7,28 +7,35 @@
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="assignments">
-    <h1>Python Practice Exercises</h1>
+    <h1>Go Practice Exercises</h1>
     <p>
       Complete the following exercises to strengthen your understanding of
-      Programming Basics Concepts
+      Programming Basics Concepts.
     </p>
 
     <section class="task">
       <h2>1. Identify the Errors</h2>
-      <p>Identify and correct the errors in the following Python code:</p>
+      <p>Identify and correct the errors in the following Go code:</p>
       <pre class="code-block">
-pront("Hello, World!")
-    x = 5
-print("x is five")</pre
+package main
+func main() {
+    fmt.Prntln("Hello, World!")
+        x := 5
+    fmt.Println("x is five")
+}</pre
       >
       <details>
         <summary>Solution</summary>
         <div>
           <pre class="code-block">
-# Corrected code
-print("Hello, World!")
-x = 5
-print("x is five")</pre
+package main
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+    x := 5
+    fmt.Println("x is five")
+}</pre
           >
         </div>
       </details>
@@ -36,22 +43,29 @@ print("x is five")</pre
 
     <section class="task">
       <h2>2. Identify the Errors</h2>
-      <p>Identify and correct the errors in the following Python code:</p>
+      <p>Identify and correct the errors in the following Go code:</p>
       <pre class="code-block">
-length = 7
-area = length * width
-width = 6
-print area</pre
+package main
+func main() {
+    length := 7
+    area := length * width
+    width := 6
+    fmt.Println(area)
+}</pre
       >
       <details>
         <summary>Solution</summary>
         <div>
           <pre class="code-block">
-# Corrected code
-length = 7
-width = 6
-area = length * width
-print(area)</pre
+package main
+import "fmt"
+
+func main() {
+    length := 7
+    width := 6
+    area := length * width
+    fmt.Println(area)
+}</pre
           >
         </div>
       </details>
@@ -59,23 +73,27 @@ print(area)</pre
 
     <section class="task">
       <h2>3. Correct the Arithmetic Operation</h2>
-      <p>
-        Given the following code, identify and fix any errors related to
-        arithmetic operations:
-      </p>
+      <p>Identify and fix any errors related to arithmetic operations:</p>
       <pre class="code-block">
-number = 10
-result = number / 0
-print(result)</pre
+package main
+func main() {
+    number := 10
+    result := number / 0
+    fmt.Println(result)
+}</pre
       >
       <details>
         <summary>Solution</summary>
         <div>
           <pre class="code-block">
-# Corrected code
-number = 10
-result = number / 2  # Changed from 0 to 2 to avoid division by zero
-print(result)</pre
+package main
+import "fmt"
+
+func main() {
+    number := 10
+    result := number / 2 // Changed from 0 to 2 to avoid division by zero
+    fmt.Println(result)
+}</pre
           >
         </div>
       </details>
@@ -91,9 +109,16 @@ print(result)</pre
         <summary>Solution</summary>
         <div>
           <pre class="code-block">
-favorite_number = int(input("Enter your favorite number: "))
-doubled_number = favorite_number * 2
-print("Double your favorite number is " + str(doubled_number))</pre
+package main
+import "fmt"
+
+func main() {
+    var favoriteNumber int
+    fmt.Print("Enter your favorite number: ")
+    fmt.Scan(&favoriteNumber)
+    doubledNumber := favoriteNumber * 2
+    fmt.Printf("Double your favorite number is %d\n", doubledNumber)
+}</pre
           >
         </div>
       </details>
@@ -109,8 +134,15 @@ print("Double your favorite number is " + str(doubled_number))</pre
         <summary>Solution</summary>
         <div>
           <pre class="code-block">
-user_name = input("Enter your name: ")
-print("Hello, " + user_name + "!")</pre
+package main
+import "fmt"
+
+func main() {
+    var userName string
+    fmt.Print("Enter your name: ")
+    fmt.Scan(&userName)
+    fmt.Printf("Hello, %s!\n", userName)
+}</pre
           >
         </div>
       </details>
@@ -119,16 +151,24 @@ print("Hello, " + user_name + "!")</pre
     <section class="task">
       <h2>6. Calculate the Area of a Circle</h2>
       <p>
-        Write a program that takes a radius (number) from the user, calculate
-        the area of a circle with the given radius, and print the area.
+        Write a program that takes a radius (number) from the user, calculates
+        the area of a circle, and prints it.
       </p>
       <details>
         <summary>Solution</summary>
         <div>
           <pre class="code-block">
-radius = float(input("Enter a radius: "))
-area = 3.14 * radius * radius
-print("The area of circle is " + str(area))</pre
+package main
+import "fmt"
+
+func main() {
+    const pi = 3.14
+    var radius float64
+    fmt.Print("Enter a radius: ")
+    fmt.Scan(&radius)
+    area := pi * radius * radius
+    fmt.Printf("The area of the circle is %.2f\n", area)
+}</pre
           >
         </div>
       </details>
@@ -136,17 +176,21 @@ print("The area of circle is " + str(area))</pre
 
     <section class="task">
       <h2>7. Convert Fahrenheit to Celsius</h2>
-      <p>
-        Write a program that converts a temperature from Fahrenheit to Celsius.
-        Use the formula: <code>Celsius = (Fahrenheit - 32) * 5/9</code>.
-      </p>
+      <p>Convert a temperature from Fahrenheit to Celsius.</p>
       <details>
         <summary>Solution</summary>
         <div>
           <pre class="code-block">
-fahrenheit = float(input("Enter temperature in Fahrenheit: "))
-celsius = (fahrenheit - 32) * 5/9
-print("Temperature in Celsius is " + str(celsius))</pre
+package main
+import "fmt"
+
+func main() {
+    var fahrenheit float64
+    fmt.Print("Enter temperature in Fahrenheit: ")
+    fmt.Scan(&fahrenheit)
+    celsius := (fahrenheit - 32) * 5 / 9
+    fmt.Printf("Temperature in Celsius is %.2f\n", celsius)
+}</pre
           >
         </div>
       </details>
@@ -155,17 +199,25 @@ print("Temperature in Celsius is " + str(celsius))</pre
     <section class="task">
       <h2>8. Calculate the Perimeter of a Rectangle</h2>
       <p>
-        Write a program that takes the length and width of a rectangle from the
-        user, calculates the perimeter, and prints it.
+        Write a program that takes the length and width of a rectangle,
+        calculates the perimeter, and prints it.
       </p>
       <details>
         <summary>Solution</summary>
         <div>
           <pre class="code-block">
-length = int(input("Enter the length of the rectangle: "))
-width = int(input("Enter the width of the rectangle: "))
-perimeter = 2 * (length + width)
-print("The perimeter of the rectangle is " + str(perimeter))</pre
+package main
+import "fmt"
+
+func main() {
+    var length, width int
+    fmt.Print("Enter the length of the rectangle: ")
+    fmt.Scan(&length)
+    fmt.Print("Enter the width of the rectangle: ")
+    fmt.Scan(&width)
+    perimeter := 2 * (length + width)
+    fmt.Printf("The perimeter of the rectangle is %d\n", perimeter)
+}</pre
           >
         </div>
       </details>
@@ -174,16 +226,23 @@ print("The perimeter of the rectangle is " + str(perimeter))</pre
     <section class="task">
       <h2>9. Calculate the Volume of a Cube</h2>
       <p>
-        Write a program that takes the side length of a cube from the user,
-        calculates the volume, and prints it.
+        Write a program that takes the side length of a cube, calculates the
+        volume, and prints it.
       </p>
       <details>
         <summary>Solution</summary>
         <div>
           <pre class="code-block">
-side_length = int(input("Enter the side length of the cube: "))
-volume = side_length ** 3
-print("The volume of the cube is " + str(volume))</pre
+package main
+import "fmt"
+
+func main() {
+    var sideLength int
+    fmt.Print("Enter the side length of the cube: ")
+    fmt.Scan(&sideLength)
+    volume := sideLength * sideLength * sideLength
+    fmt.Printf("The volume of the cube is %d\n", volume)
+}</pre
           >
         </div>
       </details>
@@ -191,55 +250,21 @@ print("The volume of the cube is " + str(volume))</pre
 
     <section class="task">
       <h2>10. Convert Kilometers to Miles</h2>
-      <p>
-        Write a program that converts a distance from kilometers to miles. Use
-        the formula: <code>Miles = Kilometers * 0.621371</code>.
-      </p>
+      <p>Write a program that converts a distance from kilometers to miles.</p>
       <details>
         <summary>Solution</summary>
         <div>
           <pre class="code-block">
-kilometers = float(input("Enter distance in kilometers: "))
-miles = kilometers * 0.621371
-print("Distance in miles is " + str(miles))</pre
-          >
-        </div>
-      </details>
-    </section>
+package main
+import "fmt"
 
-    <section class="task">
-      <h2>11. Calculate the Average of Three Numbers</h2>
-      <p>
-        Write a program that takes three numbers from the user, calculates their
-        average, and prints the result.
-      </p>
-      <details>
-        <summary>Solution</summary>
-        <div>
-          <pre class="code-block">
-num1 = int(input("Enter the first number: "))
-num2 = int(input("Enter the second number: "))
-num3 = int(input("Enter the third number: "))
-average = (num1 + num2 + num3) / 3
-print("The average of the three numbers is " + str(average))</pre
-          >
-        </div>
-      </details>
-    </section>
-
-    <section class="task">
-      <h2>12. Calculate the Square of a Number</h2>
-      <p>
-        Write a program that takes a number from the user, calculates the
-        square, and prints the result.
-      </p>
-      <details>
-        <summary>Solution</summary>
-        <div>
-          <pre class="code-block">
-number = int(input("Enter a number: "))
-square_root = int ** 2
-print("The square root of the number is " + str(square_root))</pre
+func main() {
+    var kilometers float64
+    fmt.Print("Enter distance in kilometers: ")
+    fmt.Scan(&kilometers)
+    miles := kilometers * 0.621371
+    fmt.Printf("Distance in miles is %.2f\n", miles)
+}</pre
           >
         </div>
       </details>
