@@ -67,8 +67,8 @@
           <ul>
             <li>Go code is case-sensitive.</li>
             <li>
-              Use indentation (not braces) to define code blocks (e.g., for
-              loops or conditionals).
+              Use braces and indentations to define code blocks (e.g., for loops
+              or conditionals).
             </li>
             <li>
               Comments in Go start with `//` for single-line comments and `/*
@@ -130,6 +130,14 @@ func main() {
             <li>
               <b>Map:</b> Key-value pairs, e.g., `{"name": "Alice", "age": 25}`
             </li>
+            <li>
+              <b>Slice:</b> A dynamically sized collection of items, e.g.,
+              `[]int{1, 2, 3}`
+            </li>
+            <li>
+              <b>Struct:</b> A collection of fields (possibly of different
+              types), e.g., `struct{Name: "Alice", Age: 25}`
+            </li>
           </ul>
           <br />
           <p>Examples:</p>
@@ -150,8 +158,18 @@ isStudent := true
 fruits := [3]string{"apple", "banana", "cherry"}
 
 // Map
-person := map[string]interface{}{"name": "Alice", "age": 25}</pre
-          >
+person := map[string]interface{}{"name": "Alice", "age": 25}
+
+// Slice
+numbers := []int{1, 2, 3, 4, 5}
+
+// Struct
+type Person struct {
+  Name string
+  Age  int
+}
+personStruct := Person{Name: "Alice", Age: 25}
+          </pre>
         </section>
 
         <section class="arithmetic-operations">
@@ -280,11 +298,16 @@ func main() {
 }</pre
           >
         </section>
+        <p>
+          <a href="assignments/programming-basics-practice.html"
+            >Practice Exercises</a
+          >
+        </p>
       </main>
     </div>
 
     <footer>
-      <p>&copy; 2024 Introduction to Programming - Week 1 (Go)</p>
+      <p>&copy; 2024 Introduction to Programming (Go)</p>
     </footer>
   </body>
 </html>

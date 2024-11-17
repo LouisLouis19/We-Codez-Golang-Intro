@@ -225,6 +225,229 @@ func main() {
           </p>
         </section>
 
+        <section class="logical-operators">
+          <h2>Logical Operators in Go</h2>
+          <p>
+            Logical operators allow you to combine multiple conditions in your
+            code, enabling you to perform complex checks based on several
+            criteria. Go has three primary logical operators:
+          </p>
+          <ul>
+            <li><strong>AND</strong></li>
+            <li><strong>OR</strong></li>
+            <li><strong>NOT</strong></li>
+          </ul>
+
+          <section class="operator" id="and-operator">
+            <h3>AND Operator (<code>&&</code>)</h3>
+            <p>
+              The <code>&&</code> operator checks if
+              <strong>both conditions</strong> are true. If either condition is
+              false, the entire expression will evaluate to false.
+            </p>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    age := 25
+    if age >= 18 && age <= 35 {
+        fmt.Println("You are a young adult.")
+    }
+}</pre
+            >
+            <p>
+              <b>Explanation:</b> The condition
+              <code>age >= 18 && age <= 35</code> will only be true if
+              <code>age</code> is both 18 or older <strong>and</strong> 35 or
+              younger. If <code>age</code> were 40, this statement would not
+              print anything because <code>age <= 35</code> would be false.
+            </p>
+
+            <h4>More Examples with AND</h4>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    salary := 5000
+    yearsExperience := 3
+    if salary > 3000 && yearsExperience > 2 {
+        fmt.Println("Eligible for senior position.")
+    }
+}</pre
+            >
+            <p>
+              This example checks that the person has a salary greater than 3000
+              <strong>and</strong> more than 2 years of experience.
+            </p>
+          </section>
+
+          <section class="operator" id="or-operator">
+            <h3>OR Operator (<code>||</code>)</h3>
+            <p>
+              The <code>||</code> operator checks if
+              <strong>at least one condition</strong> is true. If any one of the
+              conditions is true, the entire expression will evaluate to true.
+            </p>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    temperature := 30
+    if temperature < 15 || temperature > 25 {
+        fmt.Println("The weather is outside the comfortable range.")
+    }
+}</pre
+            >
+            <p>
+              <b>Explanation:</b> This code checks if the temperature is below
+              15 <strong>or</strong> above 25. If either condition is true, the
+              message will print.
+            </p>
+
+            <h4>More Examples with OR</h4>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    day := "Saturday"
+    if day == "Saturday" || day == "Sunday" {
+        fmt.Println("It's the weekend!")
+    }
+}</pre
+            >
+            <p>
+              This example checks if the day is either Saturday
+              <strong>or</strong> Sunday to determine if it's the weekend.
+            </p>
+          </section>
+
+          <section class="operator" id="not-operator">
+            <h3>NOT Operator (<code>!</code>)</h3>
+            <p>
+              The <code>!</code> operator reverses the Boolean value of a
+              condition. If the condition is true, <code>!</code> makes it
+              false, and if it’s false, <code>!</code> makes it true.
+            </p>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    isRaining := false
+    if !isRaining {
+        fmt.Println("You can leave the umbrella at home.")
+    }
+}</pre
+            >
+            <p>
+              <b>Explanation:</b> <code>!isRaining</code> inverts the value of
+              <code>isRaining</code>. So if <code>isRaining</code> is false,
+              <code>!isRaining</code> is true, and the message will print.
+            </p>
+
+            <h4>More Examples with NOT</h4>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    isSunny := true
+    if !isSunny {
+        fmt.Println("It might be cloudy or rainy today.")
+    }
+}</pre
+            >
+            <p>
+              This example checks if <code>isSunny</code> is false (i.e., it’s
+              not sunny) and prints a message accordingly.
+            </p>
+          </section>
+
+          <section class="summary">
+            <h3>Summary Table</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Operator</th>
+                  <th>Description</th>
+                  <th>Example</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&&</code></td>
+                  <td>True if <strong>both</strong> conditions are true</td>
+                  <td><code>True && False</code></td>
+                  <td>False</td>
+                </tr>
+                <tr>
+                  <td><code>||</code></td>
+                  <td>
+                    True if <strong>at least one</strong> condition is true
+                  </td>
+                  <td><code>True || False</code></td>
+                  <td>True</td>
+                </tr>
+                <tr>
+                  <td><code>!</code></td>
+                  <td>Reverses the Boolean value of a single condition</td>
+                  <td><code>!True</code></td>
+                  <td>False</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="additional-examples">
+            <h3>Additional Examples</h3>
+            <h4>AND Example</h4>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    age := 20
+    hasLicense := true
+    if age >= 18 && hasLicense {
+        fmt.Println("You are allowed to drive.")
+    }
+}</pre
+            >
+
+            <h4>OR Example</h4>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    temperature := -5
+    windSpeed := 30
+    if temperature < 0 || windSpeed > 20 {
+        fmt.Println("Weather conditions are extreme!")
+    }
+}</pre
+            >
+
+            <h4>NOT Example</h4>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    isMember := false
+    if !isMember {
+        fmt.Println("Please sign up to become a member.")
+    }
+}</pre
+            >
+          </section>
+        </section>
+
         <section class="practice">
           <h2>Practice</h2>
           <p>
@@ -270,8 +493,8 @@ func main() {
             >
           </details>
 
-          <h3>3. Even or Odd</h3>
-          <p>Determine if a number is even or odd:</p>
+          <h3>3. Check if a Number is Zero</h3>
+          <p>Write a program to check if a number is zero:</p>
           <details>
             <summary>Solution</summary>
             <pre class="code-block">
@@ -279,21 +502,143 @@ package main
 import "fmt"
 
 func main() {
-    number := 7
-    if number%2 == 0 {
-        fmt.Println("Even")
+    number := 0
+    if number == 0 {
+        fmt.Println("The number is zero.")
     } else {
-        fmt.Println("Odd")
+        fmt.Println("The number is not zero.")
+    }
+}</pre
+            >
+          </details>
+
+          <h3>4. Check if a String is Empty</h3>
+          <p>Check if a string is empty:</p>
+          <details>
+            <summary>Solution</summary>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    text := ""
+    if text == "" {
+        fmt.Println("The string is empty.")
+    } else {
+        fmt.Println("The string is not empty.")
+    }
+}</pre
+            >
+          </details>
+
+          <h3>5. Compare Two Numbers</h3>
+          <p>Check if one number is greater than another:</p>
+          <details>
+            <summary>Solution</summary>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    a := 3
+    b := 5
+    if a > b {
+        fmt.Println("a is greater than b")
+    } else {
+        fmt.Println("a is not greater than b")
+    }
+}</pre
+            >
+          </details>
+
+          <h3>6. Check if Someone Can Vote</h3>
+          <p>Check if a person is old enough to vote (18 years or older):</p>
+          <details>
+            <summary>Solution</summary>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    age := 20
+    if age >= 18 {
+        fmt.Println("Eligible to vote")
+    } else {
+        fmt.Println("Not eligible to vote")
+    }
+}</pre
+            >
+          </details>
+
+          <h3>7. Check if a Number is Positive, Negative, or Zero</h3>
+          <p>Determine if a number is positive, negative, or zero:</p>
+          <details>
+            <summary>Solution</summary>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    number := -1
+    if number > 0 {
+        fmt.Println("Positive")
+    } else if number == 0 {
+        fmt.Println("Zero")
+    } else {
+        fmt.Println("Negative")
+    }
+}</pre
+            >
+          </details>
+
+          <h3>8. Check if Someone is a Teenager</h3>
+          <p>Check if a person is a teenager (between 13 and 19):</p>
+          <details>
+            <summary>Solution</summary>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    age := 14
+    if age >= 13 && age <= 19 {
+        fmt.Println("Teenager")
+    } else {
+        fmt.Println("Not a teenager")
+    }
+}</pre
+            >
+          </details>
+
+          <h3>9. Simple Password Check</h3>
+          <p>Check if a given password matches a stored password:</p>
+          <details>
+            <summary>Solution</summary>
+            <pre class="code-block">
+package main
+import "fmt"
+
+func main() {
+    password := "1234"
+    enteredPassword := "1234"
+    if enteredPassword == password {
+        fmt.Println("Access Granted")
+    } else {
+        fmt.Println("Access Denied")
     }
 }</pre
             >
           </details>
         </section>
+
+        <p>
+          <a href="assignments/if-else-practice.html">Practice Exercises</a>
+        </p>
       </main>
     </div>
 
     <footer>
-      <p>&copy; 2024 Introduction to Programming. All rights reserved.</p>
+      <p>&copy; 2024 Introduction to Programming (Go)</p>
     </footer>
   </body>
 </html>
