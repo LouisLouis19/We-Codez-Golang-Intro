@@ -66,8 +66,8 @@ for i := 0; i < len(sequence); i++ {
           <pre class="code-block">
 fruits := []string{"apple", "banana", "cherry"}
 
-for _, fruit := range fruits {
-    fmt.Println(fruit)
+for i := 0; i < len(fruits); i++ {
+  fmt.Println(fruits[i])
 }</pre
           >
           <p>
@@ -87,8 +87,8 @@ cherry</pre
           <p>1. Iterating Over a String:</p>
           <pre class="code-block">
 word := "hello"
-for _, letter := range word {
-    fmt.Println(string(letter))
+for i := 0; i < len(word); i++ {
+    fmt.Println(string(word[i]))
 }</pre
           >
           <p>This will output each letter in the word "hello":</p>
@@ -105,7 +105,7 @@ o</pre
 numbers := []int{1, 2, 3, 4, 5}
 total := 0
 
-for _, number := range numbers {
+for i := 0; i < len(numbers); i++ {
     total += number
 }
 
@@ -136,6 +136,7 @@ fmt.Println("Total:", total)</pre
           </p>
           <p>Example with <code>range</code>:</p>
           <pre class="code-block">
+numbers := []int{1, 2, 3, 4, 5}
 for i, num := range numbers {
     fmt.Println(i, num)
 }</pre
@@ -150,17 +151,6 @@ for i, num := range numbers {
 2 3
 3 4
 4 5</pre
-          >
-
-          <h3>More Examples:</h3>
-          <p>1. Using <code>range</code> to Calculate a Sum:</p>
-          <pre class="code-block">
-total_sum := 0
-for _, i := range range(1, 11) {
-    total_sum += i
-}
-
-fmt.Println("Total Sum:", total_sum)</pre
           >
 
           <h3>Conclusion</h3>
@@ -278,6 +268,9 @@ for _, name := range names {
             >
           </details>
         </section>
+        <p>
+          <a href="assignments/for-loops-practice.html">Practice Exercises</a>
+        </p>
       </main>
     </div>
 
